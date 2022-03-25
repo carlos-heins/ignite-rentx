@@ -1,11 +1,17 @@
 # Rentx
-É um projeto de aluguel de carros desenvolvido a fins de conhecimento no curso de node no IGNITE da rocketSeat
+### É um projeto de aluguel de carros desenvolvido para fins de conhecimento no curso de node no IGNITE da [RocketSeat](https://www.rocketseat.com.br/)
 
-## O modelo seguido para implementação:
-![](../diagrama.png)
+## Tópicos
+* [Modelo para implementação](#modelo-seguido-para-implementação)
+* [Regras de negócio](#regras-de-negócio)
+* [Organização](#organização-do-projeto)
+* [Tecnologias usadas](#tecnologias-usadas)
+
+# Modelo seguido para implementação:
+![](/diagrama.png)
 
 
-# Regras de Negócio
+# Regras de Negócio:
 
 ## Cadastro de carro
 
@@ -103,3 +109,11 @@
 **RN**
 - O usuário precisa informar uma nova senha
 - O link enviado para a recuperação deve expirar em 3 horas
+# Organização do projeto:
+- __Rotas:__ tem a responsabilidade de receber um `request`, passar as informações  para outros módulos  retornar um `response`.
+- __Controllers:__ um intermediário entre as rotas e os useCases, conhece os dois lados e pode ser onde tratamos exceções.
+- __UseCases:__ regras de negócio (validação,cálculos,etc...) - metodo `ececute()` recebe as informações → cria novos erros em caso de falhas nas regras de negócio → Se tudo der certo, executa  o `Repository.create`, passando { informações }.
+- __Repository:__ onde temos informações do nosso repositório, estrutura de dados,conexões,etc. - tem as funções de manipulacao do model. ex: create, findbyname, etc.
+- __Model:__ onde modelamos nossa entidade → o modelo a ser seguido → também tem a função  de criar o `uuid` caso ainda nao tenha sido criado.
+# Tecnologias usadas:
+- Começamos o projeto projeto configurando o __typeScript__ e __ESLint/Prettier__;
