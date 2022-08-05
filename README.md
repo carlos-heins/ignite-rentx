@@ -15,6 +15,10 @@
 
 ## Cadastro de carro
 
+**RF => Requisitos funcionais**
+
+**RN => Requisitos não funcionais**
+
 **RF**
 - Deve ser possível cadastrar um novo carro.
 
